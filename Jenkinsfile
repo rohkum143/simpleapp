@@ -10,10 +10,11 @@ agent any
    steps{
     script {
       dockerImage = docker.build registry
+      sh 'echo "rohtashkumar/nginxdemo > anchore_images"'
+      sh 'ls -ltra'
     }}}
   stage('Security') {
     steps {
-     sh 'echo "rohtashkumar/nginxdemo > anchore_images"'
      anchore name: 'anchore_images'
     }}
   stage('Deploy Image') {
