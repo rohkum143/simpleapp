@@ -13,7 +13,7 @@ agent any
     }}}
   stage('Security') {
     steps {
-     sh 'echo "$dockerImage > anchore_images"'
+     sh 'echo "rohtashkumar/nginxdemo > anchore_images"'
      anchore name: 'anchore_images'
     }}
   stage('Deploy Image') {
